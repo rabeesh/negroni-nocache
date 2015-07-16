@@ -3,7 +3,6 @@ package nocache
 import (
     "log"
     "os"
-    "fmt"
     "net/http"
     "github.com/codegangsta/negroni"
 )
@@ -13,7 +12,7 @@ type NoCache struct {
     Logger  *log.Logger
 }
 
-func NewNoCache(noEtag bool) *NoCache {
+func New(noEtag bool) *NoCache {
     return &NoCache{
         noEtag: noEtag,
         Logger: log.New(os.Stdout, "[negroni no cache enabled] ", 0),

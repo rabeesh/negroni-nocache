@@ -23,7 +23,7 @@ func main() {
     })
 
     n := negroni.New()
-    n.Use(nocache.NewNoCache(true))
+    n.Use(nocache.New(true))
     n.Use(negroni.NewStatic(http.Dir("public")))
     n.UseHandler(mux)
     n.Run(":5000")
